@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Membership Tiers - Prestige</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-serif">
+
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <!-- Intro Section -->
+  <section class="py-24 px-6 bg-black text-center border-y border-gray-600">
+    <div class="max-w-3xl mx-auto border border-gray-600 py-16 px-6">
+      <h1 class="text-4xl md:text-5xl tracking-widest mb-6 text-gray-300">MEMBERSHIP TIERS</h1>
+      <p class="text-sm leading-relaxed text-gray-300">
+        More than just luxury, our membership is an invitation to elevate your lifestyle. From cutting-edge longevity
+        therapy to bespoke travel itineraries, we provide the tools and experiences to help you achieve your personal
+        best. Become a member and embark on a journey of self-discovery and fulfillment.
+      </p>
+    </div>
+  </section>
+
+  <!-- All Tiers Section -->
+  <section class="bg-cover bg-center text-white py-24 px-4" style="background-image: url('../assets/images/membership-tier-bg1.jpg');">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-10 gap-y-40">
+
+      <!-- Silver -->
+      <div class="relative border border-white/50 px-6 pt-12 pb-10 backdrop-blur-md bg-white/5">
+        <div class="md:w-[300px] h-[50px] min-w-[35px] min-h-[35px] absolute -top-12 left-1/2 -translate-x-1/2 bg-gradient-to-br from-white to-gray-300 text-black text-base tracking-wide px-6 py-2 uppercase shadow-md flex justify-center items-center text-center">
+          SILVER TIER
+        </div>
+        <ul class="space-y-4 text-sm text-white leading-relaxed">
+          <li class="flex items-start gap-2"><span>✔</span> Welcome gift</li>
+          <li class="flex items-start gap-2"><span>✔</span> Exclusive member-only content or resources</li>
+          <li class="flex items-start gap-2 text-yellow-300"><span>✔</span> Early access to sales or new products</li>
+          <li class="flex items-start gap-2"><span>✔</span> Birthday reward</li>
+        </ul>
+      </div>
+
+      <!-- Gold -->
+      <div class="relative border border-white/50 px-6 pt-12 pb-10 backdrop-blur-md bg-white/5">
+        <div class="md:w-[300px] h-[50px] min-w-[35px] min-h-[35px] absolute -top-12 left-1/2 -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-base tracking-wide px-6 py-2 uppercase shadow-md flex justify-center items-center text-center">
+          GOLD TIER
+        </div>
+        <ul class="space-y-4 text-sm text-white leading-relaxed">
+          <li class="flex items-start gap-2"><span>✔</span> All Silver Tier benefits</li>
+          <li class="flex items-start gap-2"><span>✔</span> Faster shipping</li>
+          <li class="flex items-start gap-2"><span>✔</span> Dedicated concierge support line</li>
+          <li class="flex items-start gap-2"><span>✔</span> Free gift wrapping</li>
+          <li class="flex items-start gap-2"><span>✔</span> Annual gift</li>
+        </ul>
+      </div>
+
+      <!-- Platinum -->
+      <div class="relative border border-white/50 px-6 pt-12 pb-10 backdrop-blur-md bg-white/5">
+        <div class="md:w-[300px] h-[50px] min-w-[35px] min-h-[35px] absolute -top-12 left-1/2 -translate-x-1/2 bg-gradient-to-br from-gray-300 to-white text-black text-black tracking-wide px-6 py-2 uppercase shadow-md flex justify-center items-center text-center">
+          PLATINUM TIER
+        </div>
+        <ul class="space-y-4 text-sm text-white leading-relaxed">
+          <li class="flex items-start gap-2"><span>✔</span> All Silver and Gold Tier benefits</li>
+          <li class="flex items-start gap-2"><span>✔</span> Free expedited shipping</li>
+          <li class="flex items-start gap-2"><span>✔</span> Early access to new product launches</li>
+          <li class="flex items-start gap-2"><span>✔</span> Invitations to exclusive events or webinars</li>
+          <li class="flex items-start gap-2"><span>✔</span> Personalized recommendations or consultations</li>
+          <li class="flex items-start gap-2"><span>✔</span> A luxury travel package</li>
+        </ul>
+      </div>
+
+      <!-- Black -->
+      <div class="relative border border-white/50 px-6 pt-12 pb-10 backdrop-blur-md bg-white/5">
+        <div class="md:w-[300px] h-[50px] min-w-[35px] min-h-[35px] absolute -top-12 left-1/2 -translate-x-1/2 bg-gradient-to-b from-zinc-800 to-black text-white text-black tracking-wide px-6 py-2 uppercase shadow-md flex justify-center items-center text-center">
+          BLACK TIER
+        </div>
+        <ul class="space-y-4 text-sm text-white leading-relaxed">
+          <li><strong>*Invitation Only</strong></li>
+          <li class="flex items-start gap-2"><span>✔</span> All Silver, Gold, and Platinum Tier benefits</li>
+          <li class="flex items-start gap-2"><span>✔</span> Private jet hours</li>
+          <li class="flex items-start gap-2"><span>✔</span> Highest priority concierge service with dedicated account manager</li>
+          <li class="flex items-start gap-2"><span>✔</span> Exclusive experiences</li>
+          <li class="flex items-start gap-2"><span>✔</span> Luxury gifts or upgrades</li>
+          <li class="flex items-start gap-2"><span>✔</span> Invitations to VIP events</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- Load Header and Footer -->
+  <script>
+    async function loadComponents() {
+      const [headerRes, footerRes] = await Promise.all([
+        fetch('../components/header.html'),
+        fetch('../components/footer.html')
+      ]);
+      document.getElementById('header').innerHTML = await headerRes.text();
+      document.getElementById('footer').innerHTML = await footerRes.text();
+    }
+    loadComponents();
+  </script>
+  <script src="../assets/js/script.js"></script>
+
+</body>
+</html>

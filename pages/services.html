@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Prestige</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-serif">
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="relative h-[90vh] bg-cover bg-center flex items-center justify-center" style="background-image: url('../assets/images/services-hero.jpg');">
+    <h1 class="text-white text-5xl tracking-widest">SERVICES</h1>
+  </section>
+
+  <!-- Gallery Rows -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-0">
+    <img src="../assets/images/services-1.jpg" class="w-full object-cover h-full" alt="">
+    <img src="../assets/images/services-2.jpg" class="w-full object-cover h-full" alt="">
+    <img src="../assets/images/services-3.jpg" class="w-full object-cover h-full" alt="">
+    <img src="../assets/images/services-4.jpg" class="w-full object-cover h-full" alt="">
+    <img src="../assets/images/services-5.jpg" class="w-full object-cover h-full" alt="">
+    <img src="../assets/images/services-6.jpg" class="w-full object-cover h-full" alt="">
+  </section>
+
+  <!-- Villa Full Width Image -->
+  <section>
+    <img src="../assets/images/services-7.jpg" class="w-full object-cover" alt="Luxury Villa">
+  </section>
+
+  <!-- Client Categories -->
+  <section class="bg-black py-20 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      <!-- Corporate -->
+      <div class="text-center">
+        <img src="../assets/images/corporate.jpg" class="w-full h-auto mb-4" alt="Corporate Clients">
+        <h3 class="uppercase tracking-widest text-lg mb-2">CORPORATE CLIENTS</h3>
+        <a href="corporate_clients.html" class="inline-block bg-[#b5a990] text-white px-10 py-2 text-sm tracking-widest">SEE MORE</a>
+      </div>
+      <!-- Individual -->
+      <div class="text-center">
+        <img src="../assets/images/individual.jpg" class="w-full h-auto mb-4" alt="Individual Clients">
+        <h3 class="uppercase tracking-widest text-lg mb-2">INDIVIDUAL CLIENTS</h3>
+        <a href="individual_clients.html" class="inline-block bg-[#b5a990] text-white px-10 py-2 text-sm tracking-widest">SEE MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadComponents() {
+      const [headerRes, footerRes] = await Promise.all([
+        fetch('../components/header.html'),
+        fetch('../components/footer.html')
+      ]);
+      document.getElementById('header').innerHTML = await headerRes.text();
+      document.getElementById('footer').innerHTML = await footerRes.text();
+    }
+    loadComponents();
+  </script>
+  <script src="../assets/js/script.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'CormorantGaramond-Italic';
+  src: url('../fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('../fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('../fonts/NotoSans-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'NotoSansThai';
+  src: url('../fonts/NotoSansThai-VariableFont.ttf') format('truetype');
+}
+
+
+.font-cormorant {
+  font-family: 'CormorantGaramond', serif;
+}
+
+.font-cormorant-italic {
+  font-family: 'CormorantGaramond-Italic', serif;
+}
+
+.font-noto {
+  font-family: 'NotoSans', sans-serif;
+}
+
+.font-noto-thai {
+  font-family: 'NotoSansThai', sans-serif;
+}

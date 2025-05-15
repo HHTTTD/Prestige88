@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elevating Experiences - Prestige</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-serif bg-white text-gray-900">
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('../assets/images/hero-elevating.jpg');">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative z-10">
+      <h1 class="text-5xl md:text-6xl font-light tracking-widest mb-6 font-cormorant">ELEVATING EXPERIENCES</h1>
+      <a href="#" class="inline-block bg-[#a7957d] text-white px-6 py-2 text-sm tracking-wide hover:opacity-90 transition font-noto-thai">PRESTIGE INFINITY</a>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="bg-white text-center py-16 px-6">
+    <h2 class="text-xl text-black tracking-wide mb-3 font-cormorant">LIFESTYLE MANAGEMENT | CONCIERGE SERVICE | ADVISORY SERVICE</h2>
+    <div class="w-14 h-px bg-gray-500 mx-auto mb-6"></div>
+    <h3 class="text-lg font-semibold mb-4 font-cormorant">UNCOMPROMISING QUALITY AND PERSONALIZED TOUCH</h3>
+    <p class="max-w-5xl mx-auto text-sm leading-relaxed text-gray-700 font-noto-thai">
+      We go above and beyond to ensure that every detail, from the finest amenities to impeccable service,
+      reflects the highest that members' preferences and needs are always at the forefront, creating a truly bespoke experience.
+      Indulge in refined leisure and social connections.
+    </p>
+  </section>
+
+  <!-- Offers Section -->
+  <section class="bg-black text-white py-16 px-6">
+    <h2 class="text-center text-3xl md:text-4xl font-cormorant mb-12 tracking-widest">OFFERS</h2>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Card 1 -->
+      <div>
+        <img src="../assets/images/offer-jet.jpg" class="w-full">
+        <div class="bg-[#1f1f1f] text-center py-2 mt-2">Private jets prices<br>starting at</div>
+      </div>
+      <!-- Card 2 -->
+      <div>
+        <img src="../assets/images/offer-cake.jpg" class="w-full">
+        <div class="bg-[#1f1f1f] text-center py-2 mt-2">Stem Cells</div>
+      </div>
+      <!-- Card 3 -->
+      <div>
+        <img src="../assets/images/offer-flowers.jpg" class="w-full">
+        <div class="bg-[#1f1f1f] text-center py-2 mt-2">Hair transplant</div>
+      </div>
+      <!-- Card 4 -->
+      <div>
+        <img src="../assets/images/offer-boat.jpg" class="w-full">
+        <div class="bg-[#1f1f1f] text-center py-2 mt-2">Legal Advisory</div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="#" class="inline-block bg-[#a7957d] text-white px-6 py-2 text-sm tracking-wide hover:opacity-90 transition font-noto-thai">SEE MORE</a>
+    </div>
+  </section>
+
+  <!-- Membership Tiers Section -->
+  <section class="relative bg-cover bg-center text-white py-24 px-6" style="background-image: url('../assets/images/membership-bg.jpg');">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+      <div class="bg-white text-black p-6 max-w-md mb-8 lg:mb-0">
+        <p class="text-sm font-noto-thai">
+          More than just luxury, our membership is an invitation to elevate your lifestyle.
+          From cutting-edge longevity therapy to bespoke travel itineraries, we provide the tools and experiences to help you achieve your personal best.
+          Become a member and embark on a journey of self-discovery and fulfillment.
+        </p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl font-cormorant tracking-widest mb-4">MEMBERSHIP TIERS</h3>
+        <a href="#" class="inline-block border border-white px-6 py-2 text-sm tracking-wide hover:bg-white hover:text-black transition font-noto-thai">SEE MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-black text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+      <div class="text-center lg:text-left mb-8 lg:mb-0">
+        <h3 class="text-2xl font-cormorant tracking-widest mb-4">SERVICES</h3>
+        <a href="#" class="inline-block border border-white px-6 py-2 text-sm tracking-wide hover:bg-white hover:text-black transition font-noto-thai">SEE MORE</a>
+      </div>
+      <img src="../assets/images/service-caviar.jpg" class="w-full lg:w-1/2 max-w-md" alt="Service Image">
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <!-- Load header & footer -->
+  <script>
+    async function loadComponents() {
+      const [headerRes, footerRes] = await Promise.all([
+        fetch('../components/header.html'),
+        fetch('../components/footer.html')
+      ]);
+      document.getElementById('header').innerHTML = await headerRes.text();
+      document.getElementById('footer').innerHTML = await footerRes.text();
+    }
+    loadComponents();
+  </script>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

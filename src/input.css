@@ -1,1 +1,21 @@
-@import "tailwindcss";
+/* input.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 👇 คุณสามารถเขียน custom class เพิ่มตรงนี้ได้ */
+@layer components {
+  .btn-gold {
+    @apply bg-[#b5a990] text-white px-6 py-2 text-sm uppercase tracking-widest transition hover:bg-[#a18f7c];
+  }
+
+  .section-title {
+    @apply text-5xl md:text-7xl tracking-widest font-cormorant font-light text-center mb-4;
+  }
+}
+
+/* 👇 หรือใส่ custom css ปกติได้เหมือนเดิม */
+body {
+    
+}

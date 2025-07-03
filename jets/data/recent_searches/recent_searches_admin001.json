@@ -1,0 +1,32 @@
+[
+    {
+        "from": "Phuket",
+        "to": "Any destination",
+        "date": "Jan 01, 1970",
+        "passengers": 1
+    },
+    {
+        "from": "Phuket",
+        "to": "Any destination",
+        "date": "Any date",
+        "passengers": 1
+    },
+    {
+        "from": "Bangkok",
+        "to": "Any destination",
+        "date": "Any date",
+        "passengers": 1
+    },
+    {
+        "from": "New York",
+        "to": "Bangkok",
+        "date": "Jun 21, 2025",
+        "passengers": 1
+    },
+    {
+        "from": "DON MUEANG",
+        "to": "Any destination",
+        "date": "Jan 01, 1970",
+        "passengers": 1
+    }
+]

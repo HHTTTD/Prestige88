@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>prestige88 - Login/Signup Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { 
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: #f5f5f5; 
+      margin: 0; 
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .auth-container {
+      max-width: 440px;
+      width: 100%;
+      margin: 20px;
+      padding: 44px 36px 32px 36px;
+      background: rgba(255,255,255,0.97);
+      border-radius: 12px;
+      box-shadow: 0 4px 32px 0 rgba(0,0,0,0.13);
+      position: relative;
+      z-index: 1;
+    }
+    .auth-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .auth-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 2.3rem;
+      font-weight: 600;
+      color: #222;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .auth-logo-icon {
+      font-size: 2.1rem;
+      color: #222;
+      margin-bottom: 2px;
+    }
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #888;
+      border-radius: 8px;
+      background: #fff;
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+    .input-icon {
+      background: #b3a89c;
+      color: #fff;
+      width: 52px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .input-field {
+      border: none;
+      outline: none;
+      flex: 1;
+      height: 48px;
+      padding: 0 12px;
+      font-size: 1rem;
+      background: transparent;
+      color: #3d3630;
+    }
+    .input-group-password {
+      position: relative;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #b3a89c;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .auth-label {
+      font-size: 1.01rem;
+      color: #222;
+      margin-bottom: 4px;
+      margin-left: 2px;
+      font-weight: 500;
+    }
+    .auth-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .forgot-link {
+      color: #222;
+      font-size: 0.97rem;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+    .forgot-link:hover {
+      text-decoration: underline;
+      opacity: 1;
+    }
+    .auth-btn {
+      width: 100%;
+      background: #b3a89c;
+      color: #fff;
+      font-size: 1.13rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      padding: 18px 0;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+      letter-spacing: 0.5px;
+    }
+    .auth-btn:hover {
+      background: #a19486;
+    }
+    .auth-bottom {
+      text-align: center;
+      color: #b3a89c;
+      font-size: 0.98rem;
+      margin-top: 18px;
+      opacity: 0.7;
+    }
+    .auth-bottom a {
+      color: #b3a89c;
+      text-decoration: underline;
+      margin-left: 2px;
+      font-weight: 500;
+      opacity: 1;
+      cursor: pointer;
+    }
+    .error-msg { 
+      color: #c00; 
+      text-align: center; 
+      margin-bottom: 0.5em; 
+      background: #fee;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #fcc;
+    }
+    .success-msg { 
+      color: #090; 
+      text-align: center; 
+      margin-bottom: 0.5em; 
+      background: #efe;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #cfc;
+    }
+    .form-section {
+      display: none;
+    }
+    .form-section.active {
+      display: block;
+    }
+    .info-text {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .auth-checkbox {
+      width: 16px;
+      height: 16px;
+      accent-color: #b3a89c;
+    }
+    .otp-notice {
+      background: #e3f2fd;
+      border: 1px solid #bbdefb;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+    .otp-notice h4 {
+      font-weight: 600;
+      color: #1976d2;
+      margin: 0 0 4px 0;
+      font-size: 0.9rem;
+    }
+    .otp-notice p {
+      color: #1565c0;
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-logo">
+      <div class="auth-title">PRESTIGE <i class="fas fa-plane auth-logo-icon"></i></div>
+    </div>
+    
+    <!-- Login Form -->
+    <div id="login-section" class="form-section active">
+      <form id="login-form" action="index.php" method="POST">
+        <input type="hidden" name="login" value="1">
+        <div class="auth-label">Username</div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-regular fa-user"></i></span>
+          <input type="text" name="username" class="input-field" placeholder="Enter your username" required>
+        </div>
+        <div class="auth-row">
+          <div class="auth-label" style="margin-bottom:0;">Password</div>
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+        <div class="input-group input-group-password">
+          <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" name="password" class="input-field password-input" placeholder="ENTER YOUR PASSWORD" required>
+          <button type="button" class="toggle-password" onclick="togglePassword(this)"><i class="fa-regular fa-eye" style="color:#b3a89c;"></i></button>
+        </div>
+        <button type="submit" class="auth-btn">SIGN IN</button>
+      </form>
+      <div class="auth-bottom">
+        Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a>
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup-section" class="form-section">
+      <form id="signup-form" action="index.php" method="POST">
+        <input type="hidden" name="register" value="1">
+        <div class="auth-label">Username</div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-regular fa-user"></i></span>
+          <input type="text" name="username" class="input-field" placeholder="Enter username" required minlength="3">
+        </div>
+
+        <div class="auth-label">Email</div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-regular fa-envelope"></i></span>
+          <input type="email" name="email" class="input-field" placeholder="Enter email" required>
+        </div>
+
+        <div class="auth-label">Full Name</div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-regular fa-id-card"></i></span>
+          <input type="text" name="full_name" class="input-field" placeholder="Enter full name" required>
+        </div>
+
+        <div class="auth-label">Phone Number</div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-solid fa-phone"></i></span>
+          <input type="tel" name="phone" class="input-field" placeholder="Enter phone number" required>
+        </div>
+        <div class="info-text">
+          <i class="fas fa-info-circle"></i> We will send OTP to this number to verify identity
+        </div>
+
+        <div class="auth-label">Company/Organization (if any)</div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-solid fa-building"></i></span>
+          <input type="text" name="company" class="input-field" placeholder="Enter company name">
+        </div>
+
+        <div class="auth-label">Password</div>
+        <div class="input-group input-group-password">
+          <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" name="password" class="input-field password-input" placeholder="Enter password" required minlength="6">
+          <button type="button" class="toggle-password" onclick="togglePassword(this)"><i class="fa-regular fa-eye" style="color:#b3a89c;"></i></button>
+        </div>
+
+        <div class="auth-label">Confirm Password</div>
+        <div class="input-group input-group-password">
+          <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" name="confirm_password" class="input-field password-input" placeholder="Enter password again" required minlength="6">
+          <button type="button" class="toggle-password" onclick="togglePassword(this)"><i class="fa-regular fa-eye" style="color:#b3a89c;"></i></button>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" required class="auth-checkbox">
+          <label for="terms" style="font-size: 0.85rem; color: #666;">
+            I agree to the <a href="#" style="color: #b3a89c;">Terms of Service</a> and <a href="#" style="color: #b3a89c;">Privacy Policy</a> of prestige88 and agree to receive SMS messages for verification.
+          </label>
+        </div>
+
+        <div class="otp-notice">
+          <h4><i class="fas fa-mobile-alt"></i> OTP Verification</h4>
+          <p>After clicking sign up, we will send OTP 6 digits to your phone. Please make sure the phone number is correct and can receive SMS.</p>
+        </div>
+
+        <button type="submit" class="auth-btn">
+          <i class="fas fa-mobile-alt mr-2"></i>Send OTP to Register
+        </button>
+      </form>
+      <div class="auth-bottom">
+        Already have an account? <a href="#" onclick="showLogin()">Sign In</a>
+      </div>
+    </div>
+
+    <div class="error-msg" id="error-msg" style="display:none;"></div>
+    <div class="success-msg" id="success-msg" style="display:none;"></div>
+  </div>
+
+  <script>
+    // URL ของ backend (เปลี่ยนให้ตรงกับระบบจริง)
+    const BACKEND_URL = 'index.php';
+    
+    function showLogin() {
+      document.getElementById('login-section').classList.add('active');
+      document.getElementById('signup-section').classList.remove('active');
+      clearMsg();
+    }
+    
+    function showSignup() {
+      document.getElementById('login-section').classList.remove('active');
+      document.getElementById('signup-section').classList.add('active');
+      clearMsg();
+    }
+    
+    function togglePassword(btn) {
+      const input = btn.parentElement.querySelector('.password-input');
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.innerHTML = '<i class="fa-regular fa-eye-slash" style="color:#b3a89c;"></i>';
+      } else {
+        input.type = 'password';
+        btn.innerHTML = '<i class="fa-regular fa-eye" style="color:#b3a89c;"></i>';
+      }
+    }
+    
+    function showError(msg) {
+      const el = document.getElementById('error-msg');
+      el.innerText = msg;
+      el.style.display = 'block';
+      document.getElementById('success-msg').style.display = 'none';
+    }
+    
+    function showSuccess(msg) {
+      const el = document.getElementById('success-msg');
+      el.innerText = msg;
+      el.style.display = 'block';
+      document.getElementById('error-msg').style.display = 'none';
+    }
+    
+    function clearMsg() {
+      document.getElementById('error-msg').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'none';
+    }
+    
+    // Login form - ใช้แบบปกติไม่ใช้ AJAX
+    document.getElementById('login-form').onsubmit = function(e) {
+      // ไม่ต้อง preventDefault() ให้ form submit ตามปกติ
+      clearMsg();
+      showSuccess('Logging in...');
+    };
+    
+    // Signup form - ใช้แบบปกติไม่ใช้ AJAX
+    document.getElementById('signup-form').onsubmit = function(e) {
+      // ตรวจสอบ password match
+      const password = this.querySelector('input[name="password"]').value;
+      const confirmPassword = this.querySelector('input[name="confirm_password"]').value;
+      
+      if (password !== confirmPassword) {
+        e.preventDefault();
+        clearMsg();
+        showError('Passwords do not match');
+        return;
+      }
+      
+      // ไม่ต้อง preventDefault() ให้ form submit ตามปกติ
+      clearMsg();
+      showSuccess('Sending OTP...');
+    };
+  </script>
+</body>
+</html> 

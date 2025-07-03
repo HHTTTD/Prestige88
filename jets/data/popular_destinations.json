@@ -1,0 +1,44 @@
+[
+    {
+        "id": "dest_685a05f756d43",
+        "name": "Bangkok",
+        "image": "https:\/\/www.thailandnow.in.th\/wp-content\/uploads\/2023\/07\/Bangkok-1-1024x682.jpeg",
+        "price": 495
+    },
+    {
+        "id": "dest_685a07e39f6ac",
+        "name": "Phuket",
+        "image": "https:\/\/feeds.abplive.com\/onecms\/images\/uploaded-images\/2022\/10\/27\/50e15a64279043d2bf322a4ef5aa92191666880286623506_original.jpeg",
+        "price": 350
+    },
+    {
+        "id": "dest_685a0891602e2",
+        "name": "Now York",
+        "image": "https:\/\/cdn.contexttravel.com\/image\/upload\/w_1500,q_60\/v1571947279\/blog\/36%20Hours%20in%20NYC\/NewYorkStreets.jpg",
+        "price": 790
+    },
+    {
+        "id": "dest_685a08cfc98be",
+        "name": "London",
+        "image": "https:\/\/www.studying-in-uk.org\/wp-content\/uploads\/2019\/05\/study-in-london-1068x641.jpg",
+        "price": 820
+    },
+    {
+        "id": "dest_685a090fa0423",
+        "name": "Dubai",
+        "image": "https:\/\/www.investindubai.gov.ae\/-\/media\/gathercontent\/poi\/b\/burj-khalifa\/fallback-image\/burj-khalifa-det-3.jpg",
+        "price": 570
+    },
+    {
+        "id": "dest_685a170f209de",
+        "name": "Muscat",
+        "image": "https:\/\/cdn.britannica.com\/70\/188370-050-EE6758B6\/Muscat-Oman.jpg",
+        "price": 650
+    },
+    {
+        "id": "dest_6863689308410",
+        "name": "test",
+        "image": "https:\/\/cdn.britannica.com\/70\/188370-050-EE6758B6\/Muscat-Oman.jpg",
+        "price": 9000
+    }
+]

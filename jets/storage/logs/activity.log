@@ -1,0 +1,14 @@
+[2025-06-24 01:57:11] [user_id=admin001] Add Popular Destination: name=Bangkok, price=495
+[2025-06-24 01:58:38] [user_id=admin001] Update Popular Destination: id=dest_685a05f756d43, name=Bangkok, price=495
+[2025-06-24 02:05:23] [user_id=admin001] Add Popular Destination: name=Phuket, price=350
+[2025-06-24 02:08:17] [user_id=admin001] Add Popular Destination: name=Now York, price=790
+[2025-06-24 02:09:19] [user_id=admin001] Add Popular Destination: name=London, price=820
+[2025-06-24 02:10:23] [user_id=admin001] Add Popular Destination: name=Dubai, price=570
+[2025-06-24 02:11:18] [user_id=admin001] Add Popular Destination: name=Muscat, price=650
+[2025-06-24 03:09:12] [user_id=admin001] Delete Popular Destination: id=dest_685a0946e9118
+[2025-06-24 03:10:07] [user_id=admin001] Add Popular Destination: name=Muscat, price=650
+[2025-07-01 04:48:19] [user_id=admin001] Add Popular Destination: name=test, price=700
+[2025-07-01 04:50:23] [user_id=admin001] Update Popular Destination: id=dest_6863689308410, name=test, price=800
+[2025-07-01 04:50:54] [user_id=admin001] Update Popular Destination: id=dest_6863689308410, name=test, price=900
+[2025-07-01 08:37:10] [user_id=admin001] Update Popular Destination: id=dest_6863689308410, name=test, price=9000
+[2025-07-02 05:49:45] [user_id=admin001] Update Popular Destination: id=dest_685a05f756d43, name=Bangkok, price=495

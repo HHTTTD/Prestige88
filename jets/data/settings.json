@@ -1,0 +1,28 @@
+{
+    "site_name": "prestige88",
+    "site_description": "Premium Private Jet Booking System",
+    "contact_email": "admin@prestige88.com",
+    "contact_phone": "+66 2 123 4567",
+    "otp_expiry": 5,
+    "otp_length": 6,
+    "enable_sms": true,
+    "enable_email_otp": false,
+    "membership_tiers": {
+        "silver": {
+            "points": 0,
+            "discount": 0
+        },
+        "gold": {
+            "points": 4000,
+            "discount": 10
+        },
+        "platinum": {
+            "points": 10000,
+            "discount": 20
+        }
+    },
+    "points_rate": 100,
+    "default_currency": "USD",
+    "maintenance_mode": false,
+    "debug_mode": false
+}

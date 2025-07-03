@@ -1,0 +1,251 @@
+[
+    {
+        "id": "jet001",
+        "model": "Gulfstream GV",
+        "capacity": 14,
+        "price_per_hour": 10000,
+        "range_km": 13000,
+        "max_speed": 903,
+        "amenities": [
+            "Wi-Fi",
+            "Bar",
+            "Bedroom",
+            "Conference Room",
+            "Entertainment System"
+        ],
+        "image": "https:\/\/mjets.com\/wp-content\/uploads\/2024\/11\/Pic-Fleet-02.webp",
+        "status": "available",
+        "available_slots": [
+            {
+                "date": "2026-01-24",
+                "departure": "LUANG PRABANG",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-01-27",
+                "departure": "DON MUEANG",
+                "arrival": "LUANG PRABANG",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-01-27",
+                "departure": "HANOI",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-02-02",
+                "departure": "DON MUEANG",
+                "arrival": "HANOI",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-02-02",
+                "departure": "HUE",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-02-04",
+                "departure": "DON MUEANG",
+                "arrival": "HUE",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-02-04",
+                "departure": "SIEM REAP",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-02-07",
+                "departure": "DON MUEANG",
+                "arrival": "SIEM REAP",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2025-05-28",
+                "departure": "PHUKET",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2025-06-26",
+                "departure": "SELETAR",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            }
+        ],
+        "updated_at": "2025-06-23 03:10:38"
+    },
+    {
+        "id": "jet002",
+        "model": "Gulfstream G550",
+        "capacity": 16,
+        "price_per_hour": 8000,
+        "range_km": 14260,
+        "max_speed": 880,
+        "amenities": [
+            "Wi-Fi",
+            "Full Kitchen",
+            "Master Suite",
+            "Shower",
+            "Office Space"
+        ],
+        "image": "https:\/\/mjets.com\/wp-content\/uploads\/2024\/11\/G550-2-1.webp",
+        "status": "available",
+        "available_slots": [
+            {
+                "date": "2025-06-01",
+                "departure": "SELETAR",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2025-06-09",
+                "departure": "GENEVA",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-04-11",
+                "departure": "MALDIVES",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-04-18",
+                "departure": "DON MUEANG",
+                "arrival": "MALDIVES",
+                "departure_time": "",
+                "arrival_time": ""
+            }
+        ],
+        "updated_at": "2025-06-20 09:53:03"
+    },
+    {
+        "id": "jet003",
+        "model": "Cessna Citation X",
+        "capacity": 8,
+        "price_per_hour": 8500,
+        "range_km": 6019,
+        "max_speed": 978,
+        "amenities": [
+            "Wi-Fi",
+            "Refreshment Center",
+            "Work Area"
+        ],
+        "image": "https:\/\/mjets.com\/wp-content\/uploads\/2024\/11\/Pic-Fleet-03.webp",
+        "status": "available",
+        "available_slots": [
+            {
+                "date": "2025-07-27",
+                "departure": "DON MUEANG",
+                "arrival": "PHUKET",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2025-07-30",
+                "departure": "PHUKET",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-03-02",
+                "departure": "DON MUEANG",
+                "arrival": "SIEM REAP",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2026-03-02",
+                "departure": "PHANOM PENH",
+                "arrival": "DON MUEANG",
+                "departure_time": "",
+                "arrival_time": ""
+            }
+        ],
+        "updated_at": "2025-06-20 09:53:01"
+    },
+    {
+        "id": "jet004",
+        "model": "Cessna Citation Bravo",
+        "capacity": 6,
+        "price_per_hour": 10000,
+        "range_km": 13000,
+        "max_speed": 745,
+        "amenities": [
+            "Wi-Fi",
+            "Bar",
+            "Bedroom",
+            "Conference Room",
+            "Entertainment System"
+        ],
+        "image": "https:\/\/mjets.com\/wp-content\/uploads\/2024\/11\/550_Bravo-1.webp",
+        "status": "available",
+        "available_slots": [
+            {
+                "date": "2025-12-23",
+                "departure": "DON MUEANG",
+                "arrival": "MAE HONG SON",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2025-12-23",
+                "departure": "CHIANG RAI",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            }
+        ],
+        "updated_at": "2025-06-23 03:22:25"
+    },
+    {
+        "id": "jet_6859021dc5a86",
+        "model": "test_jet",
+        "image": "https:\/\/mjets.com\/wp-content\/uploads\/2024\/11\/Pic-Fleet-02.webp",
+        "capacity": 20,
+        "max_speed": 700,
+        "range_km": 70000,
+        "price_per_hour": 15000,
+        "amenities": [
+            "test",
+            "test2"
+        ],
+        "available_slots": [
+            {
+                "date": "2025-06-24",
+                "departure": "test",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            },
+            {
+                "date": "2025-06-24",
+                "departure": "test",
+                "arrival": "",
+                "departure_time": "",
+                "arrival_time": ""
+            }
+        ],
+        "updated_at": "2025-06-24 03:32:47",
+        "status": "unavailable"
+    }
+]

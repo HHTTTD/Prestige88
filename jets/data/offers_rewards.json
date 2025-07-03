@@ -1,0 +1,76 @@
+{
+    "special_offers": [
+        {
+            "id": "weekend_special",
+            "title": "Weekend Special",
+            "description": "20% off on all weekend trips",
+            "icon": "fas fa-ticket-alt",
+            "badge": "20% OFF",
+            "discount_type": "percentage",
+            "discount_value": 20,
+            "valid_until": "2025-12-31",
+            "target_audience": "all",
+            "usage_count": 15,
+            "max_usage": 100,
+            "is_active": true,
+            "created_at": "2024-01-15 10:00:00",
+            "note": "Valid until Dec 31, 2025"
+        },
+        {
+            "id": "first_trip_discount",
+            "title": "First Trip Discount",
+            "description": "10% off on your first booking",
+            "icon": "fas fa-gift",
+            "badge": "10% OFF",
+            "discount_type": "percentage",
+            "discount_value": 10,
+            "valid_until": "2025-12-31",
+            "target_audience": "new_users",
+            "usage_count": 8,
+            "max_usage": 50,
+            "is_active": true,
+            "created_at": "2024-01-10 14:30:00",
+            "note": "New Users only",
+            "updated_at": "2025-06-20 04:26:02"
+        }
+    ],
+    "available_rewards": [
+        {
+            "id": "free_refreshments",
+            "title": "Free Onboard Refreshments",
+            "description": "Unlock at Gold Level (4,000 points)",
+            "icon": "fas fa-mug-hot",
+            "required_points": 4000,
+            "tier": "gold",
+            "unlocked_by_count": 5,
+            "is_active": true,
+            "created_at": "2024-01-01 00:00:00"
+        },
+        {
+            "id": "priority_boarding",
+            "title": "Priority Boarding",
+            "description": "Unlock at Platinum Level (10,000 points)",
+            "icon": "fas fa-bolt",
+            "required_points": 10000,
+            "tier": "platinum",
+            "unlocked_by_count": 2,
+            "is_active": true,
+            "created_at": "2024-01-01 00:00:00",
+            "updated_at": "2025-06-20 04:26:12"
+        }
+    ],
+    "promo_codes": [
+        {
+            "code": "WELCOME2024",
+            "title": "Welcome 2024",
+            "description": "15% off for new year bookings",
+            "discount_type": "percentage",
+            "discount_value": 15,
+            "valid_until": "2025-12-31",
+            "usage_count": 3,
+            "max_usage": 20,
+            "is_active": true,
+            "created_at": "2024-01-01 00:00:00"
+        }
+    ]
+}

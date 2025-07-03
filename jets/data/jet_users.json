@@ -1,0 +1,63 @@
+[
+    {
+        "id": "admin001",
+        "username": "admin",
+        "password": "$2y$12$UBbIicZEUhvmBMshsoZfd.4c7XO8\/wLYCabFeSeMZ8\/.ZK708a2Q6",
+        "email": "admin@prestige88.com",
+        "full_name": "ผู้ดูแลระบบ",
+        "role": "admin",
+        "created_at": "2025-06-12 02:10:04",
+        "membership_tier": "silver",
+        "tier_updated_at": "2025-06-23 06:17:49",
+        "tier_upgraded": true,
+        "tier_upgrade_date": "2025-06-20 04:52:42",
+        "points": 0
+    },
+    {
+        "id": "client001",
+        "username": "client",
+        "password": "$2y$12$IBgxcjniGFzXB0FCDICbpu0x.FKfxBrDj7VKNgk0YjwQqtvDTYknC",
+        "email": "client@example.com",
+        "full_name": "นายสมชาย ลูกค้าวีไอพี",
+        "phone": "081-234-5678",
+        "role": "client",
+        "membership_tier": "silver",
+        "created_at": "2025-06-12 02:10:04",
+        "tier_updated_at": "2025-06-12 05:17:46",
+        "tier_upgraded": true,
+        "tier_upgrade_date": "2025-06-12 05:17:46"
+    },
+    {
+        "id": "684f78cfd441b",
+        "username": "goko",
+        "password": "$2y$12$hgtRiR\/c2SDWOOYHdKY3Lu8jA0J4ZJGgdsZMgXU9RmcbfF9Z89qFy",
+        "email": "sitthisak1557@gmail.com",
+        "full_name": "goko_test",
+        "phone": "+668783800",
+        "company": "",
+        "role": "client",
+        "status": "active",
+        "membership_tier": "silver",
+        "created_at": "2025-06-16 01:52:16",
+        "tier_updated_at": "2025-06-24 03:28:04",
+        "dob": "",
+        "address": "-",
+        "points": 500,
+        "tier_upgraded": true,
+        "tier_upgrade_date": "2025-06-24 03:28:04"
+    },
+    {
+        "id": "68538503987d1",
+        "username": "goko33",
+        "password": "$2y$12$jj4s8xfRmDdDOgDzB3e2YeQL7RUzqO\/TK3kwlKP.wcVK.L6BHVxv6",
+        "email": "sitthisak155700000@gmail.com",
+        "full_name": "goko33",
+        "phone": "0638783500",
+        "company": "",
+        "role": "client",
+        "status": "active",
+        "membership_tier": "silver",
+        "points": 0,
+        "created_at": "2025-06-19 03:33:23"
+    }
+]

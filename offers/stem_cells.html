@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/icon_logo.svg" />
+  <title>Stem Cells - Prestige</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/font.css">
+  <link rel="stylesheet" href="/src/output.css">
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="w-full h-[85vh] bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('');">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="relative text-center z-10">
+        <h3 class="text-2xl tracking-widest uppercase mb-2 font-cormorant">Offers</h3>
+        <div class="w-60 h-px bg-white mx-auto mb-4"></div>
+        <h1 class="text-5xl md:text-7xl font-light font-cormorant">STEM CELLS</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details Section -->
+  <section class="bg-black text-white py-16 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+      <!-- Left Images -->
+      <div class="flex flex-col gap-6">
+        <img src="" alt="Stem Cell Patient" class="rounded-lg w-full" />
+        <img src="" alt="Stem Cell Microscope" class="rounded-lg w-full" />
+      </div>
+      <!-- Right Text -->
+      <div class="flex flex-col justify-center space-y-6 text-base leading-relaxed">
+        <div>
+          <h3 class="text-xl font-cormorant mb-2">Pioneering Cellular Therapy in Thailand<br>Prices Starting at USD 4,500</h3>
+          <p>
+            Discover the future of longevity and preventive medicine with our advanced stem cell therapy programs, offered exclusively in Bangkok through our internationally certified clinical partners. Treatments are delivered under the care of highly experienced, internationally trained doctors, supported by state-of-the-art laboratories, and backed by Thailand's most accredited stem cell bank.
+          </p>
+          <p class="mt-2">
+            Whether you're addressing chronic fatigue, hormonal imbalance, post-COVID recovery, or seeking anti-aging cellular renewal — our protocol is safe, physician-led, and scientifically validated.
+          </p>
+          <p class="mt-2">
+            Gain access to Thailand's most advanced regenerative care:
+          </p>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li>Top-tier regenerative doctors operating under hospital-grade protocols</li>
+            <li>Optional 5-star recovery accommodations with in-suite nursing available</li>
+            <li>Private airport transfers and luxury welcome service</li>
+            <li>Fast-track immigration and VIP lounge access in Bangkok</li>
+            <li>Dedicated bilingual concierge support before, during, and after treatment</li>
+            <li>Optional add-ons including IV drips, skincare programs, and targeted nutrient therapies</li>
+          </ul>
+          <p class="mt-2">
+            This is world-class cellular medicine — delivered with discretion, expertise, and dignity.
+          </p>
+        </div>
+        <div>
+          <a href="#" class="underline text-[#a7957d] hover:text-white font-noto-thai">Book a Private Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- Load Header and Footer -->
+  <script>
+    async function loadComponents() {
+      const [headerRes, footerRes] = await Promise.all([
+        fetch('/components/header.html'),
+        fetch('/components/footer.html')
+      ]);
+      document.getElementById('header').innerHTML = await headerRes.text();
+      document.getElementById('footer').innerHTML = await footerRes.text();
+    }
+    loadComponents();
+  </script>
+  <script src="/assets/js/script.js"></script>
+  
+</body>
+</html>

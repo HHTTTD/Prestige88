@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/icon_logo.svg" />
+  <title>Wellness Destination Package - Prestige</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/font.css">
+  <link rel="stylesheet" href="/src/output.css">
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="w-full h-[85vh] bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('');">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="relative text-center z-10">
+        <h3 class="text-2xl tracking-widest uppercase mb-2 font-cormorant">Offers</h3>
+        <div class="w-60 h-px bg-white mx-auto mb-4"></div>
+        <h1 class="text-5xl md:text-7xl font-light font-cormorant">FAST TRACK</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details Section -->
+  <section class="bg-black text-white py-16 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+      <!-- Left Images -->
+      <div class="flex flex-col gap-6 md:col-span-2 md:flex-row">
+        <img src="" alt="Legal Advisory Meeting" class="rounded-lg w-full md:w-1/2 object-cover" />
+        <img src="" alt="Legal Advisory Boardroom" class="rounded-lg w-full md:w-1/2 object-cover" />
+      </div>
+      <!-- Right Text -->
+      <div class="flex flex-col justify-center space-y-6 text-base leading-relaxed md:col-span-1">
+        <div>
+          <p>Discreet, Elite, and Global<br>
+          Whether you seek offshore structuring, private arbitration, or cross-border litigation, our curated panel of international attorneys and legal strategists ensures utmost confidentiality and results.</p>
+        </div>
+        <div>
+          <a href="#" class="underline text-[#a7957d] hover:text-white font-noto-thai">Consult a Legal Expert</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- Load Header and Footer -->
+  <script>
+    async function loadComponents() {
+      const [headerRes, footerRes] = await Promise.all([
+        fetch('/components/header.html'),
+        fetch('/components/footer.html')
+      ]);
+      document.getElementById('header').innerHTML = await headerRes.text();
+      document.getElementById('footer').innerHTML = await footerRes.text();
+    }
+    loadComponents();
+  </script>
+  <script src="/assets/js/script.js"></script>
+  
+</body>
+</html>

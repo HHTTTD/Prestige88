@@ -12,7 +12,7 @@ if (
         exit;
     }
     $currentUser = AuthController::getCurrentUser();
-    $userBookings = BookingController::getBookingsForUser('user', $currentUser['id']);
+    $userBookings = BookingController::getBookingsForUser('client', $currentUser['id']);
     $downloadData = [
         'user_info' => [
             'id' => $currentUser['id'],
@@ -35,16 +35,29 @@ if (
     $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'download_my_data'
 ) {
     require_once __DIR__ . '/controllers/AuthController.php';
+    require_once __DIR__ . '/controllers/BookingController.php';
+    require_once __DIR__ . '/utils/pdf_generator.php';
+    
     session_start();
     if (!AuthController::isLoggedIn()) {
         header('Content-Type: application/json');
         echo json_encode(['success' => false, 'message' => 'Session expired. Please login again.']);
         exit;
     }
+    
     $currentUser = AuthController::getCurrentUser();
-    header('Content-Type: application/json');
-    header('Content-Disposition: attachment; filename=\"my_data.json\"');
-    echo json_encode($currentUser, JSON_PRETTY_PRINT);
+    $userBookings = BookingController::getBookingsForUser('client', $currentUser['id']);
+    
+    // Generate PDF
+    $pdfGenerator = new PDFGenerator();
+    $html = $pdfGenerator->generateBookingsPDF($currentUser, $userBookings);
+    
+    // Add auto-print functionality
+    $finalHtml = $pdfGenerator->outputPDF($html, 'prestige_jets_statement_' . $currentUser['id'] . '.pdf');
+    
+    // Output as HTML that will auto-print to PDF
+    header('Content-Type: text/html; charset=UTF-8');
+    echo $finalHtml;
     exit;
 }
 session_start();
@@ -2132,22 +2145,23 @@ if (isset($_GET['page']) && $_GET['page'] === 'profile') {
           alert(data.message || 'Failed to switch');
         }
       };
-      // Download My Data (เปลี่ยนให้ดาวน์โหลด bookings)
+      // Download My Data (PDF Statement)
       accountBtns[1].onclick = function() {
-        const formData = new FormData();
-        formData.append('action', 'download_my_bookings');
-        fetch('', { method: 'POST', body: formData })
-          .then(res => res.blob())
-          .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'my_bookings.json';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            window.URL.revokeObjectURL(url);
-          });
+        // Create a form for POST request
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '';
+        form.target = '_blank'; // Open in new tab
+        
+        const actionInput = document.createElement('input');
+        actionInput.type = 'hidden';
+        actionInput.name = 'action';
+        actionInput.value = 'download_my_data';
+        form.appendChild(actionInput);
+        
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
       };
       // Sign Out
       accountBtns[2].onclick = function() {

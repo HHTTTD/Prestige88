@@ -2,6 +2,12 @@
     {
         "from": "Bangkok",
         "to": "Phuket",
+        "date": "Jun 18, 2025",
+        "passengers": 1
+    },
+    {
+        "from": "Bangkok",
+        "to": "Phuket",
         "date": "Jun 18, 2025"
     }
 ]

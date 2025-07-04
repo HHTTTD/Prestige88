@@ -60,6 +60,36 @@ if (
     echo $finalHtml;
     exit;
 }
+
+// --- ดัก download_pdf_direct ให้ดาวน์โหลดไฟล์เลย ---
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'download_pdf_direct'
+) {
+    require_once __DIR__ . '/controllers/AuthController.php';
+    require_once __DIR__ . '/controllers/BookingController.php';
+    require_once __DIR__ . '/utils/pdf_generator.php';
+    
+    session_start();
+    if (!AuthController::isLoggedIn()) {
+        header('Content-Type: application/json');
+        echo json_encode(['success' => false, 'message' => 'Session expired. Please login again.']);
+        exit;
+    }
+    
+    $currentUser = AuthController::getCurrentUser();
+    $userBookings = BookingController::getBookingsForUser('client', $currentUser['id']);
+    
+    // Generate PDF HTML with auto-download script
+    $pdfGenerator = new PDFGenerator();
+    $html = $pdfGenerator->generateBookingsPDF($currentUser, $userBookings);
+    
+    // Create PDF download page
+    $pdfHtml = $pdfGenerator->generatePDFDownloadPage($html, $currentUser['id']);
+    
+    header('Content-Type: text/html; charset=UTF-8');
+    echo $pdfHtml;
+    exit;
+}
 session_start();
 
 // Include all required files

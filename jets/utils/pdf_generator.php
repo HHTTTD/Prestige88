@@ -155,10 +155,42 @@ class PDFGenerator {
             color: #666;
             font-size: 12px;
         }
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+        }
+        .download-btn i {
+            margin-right: 8px;
+        }
+        @media print {
+            .download-btn { display: none; }
+        }
     </style>
-</head>
-<body>
-    <div class="container">
+  </head>
+  <body>
+      <button class="download-btn" onclick="downloadPDF()">
+          <i class="fas fa-download"></i>
+          ดาวน์โหลดเป็น PDF
+      </button>
+      
+      <div class="container">
         <div class="header">
             <div class="company-name">Prestige Jets</div>
             <div class="company-address">
@@ -299,39 +331,107 @@ class PDFGenerator {
     public function outputPDF($html, $filename = 'booking_statement.pdf') {
         // Add JavaScript for automatic PDF conversion
         $html = str_replace('</body>', '
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="assets/js/pdf-download.js"></script>
         <script>
-            // Auto-print to PDF when page loads
-            window.onload = function() {
-                // Set title for PDF
-                document.title = "Prestige Jets - Booking Statement";
-                
-                // Automatically trigger print dialog
-                setTimeout(function() {
-                    window.print();
-                }, 500);
-            };
-            
-            // Override print styles
-            const style = document.createElement("style");
-            style.innerHTML = `
-                @media print {
-                    body { margin: 0; padding: 0; }
-                    .container { 
-                        max-width: none; 
-                        margin: 0; 
-                        padding: 20px; 
-                        box-shadow: none;
-                        border-radius: 0;
-                    }
-                    .header { page-break-inside: avoid; }
-                    .booking-item { page-break-inside: avoid; }
-                    .summary { page-break-inside: avoid; }
-                }
-            `;
-            document.head.appendChild(style);
+            document.title = "Prestige Jets - Booking Statement";
         </script>
         </body>', $html);
         
         return $html;
+    }
+    
+    public function generatePDFDownloadPage($html, $userId) {
+        // Remove download button from the HTML for PDF
+        $cleanHtml = preg_replace('/<button[^>]*downloadPDF[^>]*>.*?<\/button>/is', '', $html);
+        
+        $filename = 'prestige_jets_statement_' . $userId . '_' . date('Y-m-d') . '.pdf';
+        
+        $pdfPage = '<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generating PDF...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #pdf-content {
+            display: none;
+        }
+        @media print {
+            .loading { display: none; }
+            #pdf-content { display: block; }
+            body { background: white; margin: 0; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <h2>กำลังสร้าง PDF...</h2>
+        <p>กรุณารอสักครู่ ระบบจะดาวน์โหลดไฟล์ PDF ให้อัตโนมัติ</p>
+    </div>
+    
+    <div id="pdf-content">
+        ' . $cleanHtml . '
+    </div>
+    
+    <script>
+        document.title = "' . $filename . '";
+        
+        // Auto download PDF after page loads
+        window.onload = function() {
+            setTimeout(function() {
+                window.print();
+                
+                // Close window after print dialog
+                setTimeout(function() {
+                    if (window.opener) {
+                        window.close();
+                    } else {
+                        window.history.back();
+                    }
+                }, 1000);
+            }, 1500);
+        };
+        
+        // Handle print dialog events
+        window.addEventListener("beforeprint", function() {
+            document.querySelector(".loading").style.display = "none";
+            document.querySelector("#pdf-content").style.display = "block";
+        });
+        
+        window.addEventListener("afterprint", function() {
+            document.querySelector(".loading").style.display = "block";
+            document.querySelector("#pdf-content").style.display = "none";
+        });
+    </script>
+</body>
+</html>';
+        
+        return $pdfPage;
     }
 } 

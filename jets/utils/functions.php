@@ -61,16 +61,6 @@ function getTravelStats($userId) {
     ];
 }
 
-// Mock data for UI components
-function getPopularDestinations() {
-    return [
-        ["name" => "Bangkok", "image" => "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", "price" => 495],
-        ["name" => "Phuket", "image" => "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80", "price" => 495],
-        ["name" => "New York", "image" => "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80", "price" => 495],
-        ["name" => "London", "image" => "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", "price" => 495],
-    ];
-}
-
 // Log activity (data changes)
 function logActivity($action, $details, $userId = null) {
     $logFile = 'storage/logs/activity.log';

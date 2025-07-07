@@ -363,15 +363,42 @@ function renderUpcomingTickets($bookings) {
                         </div>
                     </div>
                     <div class="space-y-2 text-sm text-gray-800">
-                        <div><span class="font-semibold">Passenger:</span> <?php echo htmlspecialchars($booking['user_name'] ?? '-'); ?></div>
-                        <div><span class="font-semibold">Ticket Number:</span> <?php echo htmlspecialchars($booking['id']); ?></div>
-                        <div><span class="font-semibold">Date:</span> <?php echo date('M d, Y', strtotime($booking['departure_date'])); ?></div>
-                        <div><span class="font-semibold">Departure:</span> <?php echo htmlspecialchars($booking['departure_location']); ?></div>
-                        <div><span class="font-semibold">Arrival:</span> <?php echo htmlspecialchars($booking['arrival_location']); ?></div>
-                        <div><span class="font-semibold">Seat:</span> <?php echo htmlspecialchars($booking['seat'] ?? '12A'); ?></div>
-                        <div><span class="font-semibold">Bus Number:</span> <?php echo htmlspecialchars($booking['bus_number'] ?? '-'); ?></div>
-                        <div><span class="font-semibold">Boarding Gate:</span> <?php echo htmlspecialchars($booking['boarding_gate'] ?? '-'); ?></div>
-                        <div><span class="font-semibold">Boarding Time:</span> <?php echo date('h:i A', strtotime($booking['departure_time'] ?? '10:30')); ?></div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Passenger:</span>
+                            <span><?php echo htmlspecialchars($booking['user_name'] ?? '-'); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Ticket Number:</span>
+                            <span><?php echo htmlspecialchars($booking['id']); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Date:</span>
+                            <span><?php echo date('M d, Y', strtotime($booking['departure_date'])); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Departure:</span>
+                            <span><?php echo htmlspecialchars($booking['departure_location']); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Arrival:</span>
+                            <span><?php echo htmlspecialchars($booking['arrival_location']); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Seat:</span>
+                            <span><?php echo htmlspecialchars($booking['seat'] ?? '12A'); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Bus Number:</span>
+                            <span><?php echo htmlspecialchars($booking['bus_number'] ?? '-'); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Boarding Gate:</span>
+                            <span><?php echo htmlspecialchars($booking['boarding_gate'] ?? '-'); ?></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Boarding Time:</span>
+                            <span><?php echo date('h:i A', strtotime($booking['departure_time'] ?? '10:30')); ?></span>
+                        </div>
                     </div>
                 </div>
             </div>

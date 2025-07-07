@@ -1774,16 +1774,18 @@ if (isset($_GET['page']) && $_GET['page'] === 'offers') {
               </div>
             <?php else: ?>
             <?php foreach ($specialOffers as $offer): ?>
-            <div class="flex rounded-2xl overflow-hidden bg-white shadow items-center">
-              <div class="w-24 h-full flex items-center justify-center bg-[#a89c8a]/90"><i class="<?php echo $offer['icon']; ?> text-3xl text-white"></i></div>
-              <div class="flex-1 p-6">
-                <div class="font-bold text-lg"><?php echo htmlspecialchars($offer['title']); ?></div>
-                <div class="text-sm text-gray-700"><?php echo htmlspecialchars($offer['desc']); ?></div>
-                <div class="text-xs text-red-500 mt-1 flex items-center gap-1">
-                  <i class="fas fa-clock"></i> <?php echo htmlspecialchars($offer['note']); ?>
+            <div class="flex items-center bg-[#a89c8a] rounded-2xl overflow-hidden shadow-md">
+              <div class="w-24 h-24 flex items-center justify-center bg-[#a89c8a]/90"><i class="<?php echo $offer['icon']; ?> text-3xl text-white"></i></div>
+              <div class="flex-1 bg-white px-6 py-4 flex items-center justify-between">
+                <div class="flex-1">
+                  <div class="font-bold text-lg"><?php echo htmlspecialchars($offer['title']); ?></div>
+                  <div class="text-sm text-gray-700"><?php echo htmlspecialchars($offer['desc']); ?></div>
+                  <div class="text-xs text-red-500 mt-1 flex items-center gap-1">
+                    <i class="fas fa-clock"></i> <?php echo htmlspecialchars($offer['note']); ?>
+                  </div>
                 </div>
+                <div class="ml-6"><button class="bg-[#a89c8a]/90 text-white px-6 py-2 rounded-xl font-medium">Use Now</button></div>
               </div>
-              <div class="flex items-center p-6"><button class="bg-[#a89c8a]/90 text-white px-6 py-2 rounded-xl font-medium">Use Now</button></div>
             </div>
             <?php endforeach; ?>
             <?php endif; ?>
@@ -1798,9 +1800,9 @@ if (isset($_GET['page']) && $_GET['page'] === 'offers') {
               </div>
             <?php else: ?>
             <?php foreach ($availableRewards as $reward): ?>
-            <div class="flex rounded-2xl overflow-hidden bg-white shadow items-center">
-              <div class="w-24 h-full flex items-center justify-center bg-[#a89c8a]/90"><i class="fas <?php echo $reward['icon']; ?> text-3xl text-white"></i></div>
-              <div class="flex-1 p-6">
+            <div class="flex items-center bg-[#a89c8a] rounded-2xl overflow-hidden shadow-md">
+              <div class="w-24 h-24 flex items-center justify-center bg-[#a89c8a]/90"><i class="fas <?php echo $reward['icon']; ?> text-3xl text-white"></i></div>
+              <div class="flex-1 bg-white px-6 py-4">
                 <div class="font-bold text-lg"><?php echo $reward['title']; ?>
                   <?php if ($reward['is_unlocked']): ?><span class="ml-2 px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Unlocked</span><?php endif; ?>
                 </div>
@@ -2256,7 +2258,7 @@ if (!function_exists('renderUpcomingTickets')) {
 
         <!-- Ticket Modal -->
         <div id="ticket-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 hidden backdrop-blur-sm">
-            <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative text-gray-800">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-2xl relative text-gray-800">
                 <button onclick="closeTicketModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
                 <h3 class="text-2xl font-bold mb-6 text-center">Ticket Details</h3>
 
@@ -2292,24 +2294,26 @@ if (!function_exists('renderUpcomingTickets')) {
                 modalFormContainer.classList.add('hidden');
 
                 modalContent.innerHTML = `
-                    <div class="text-center mb-6">
-                        <div class="w-52 h-52 bg-[#a89c8a] flex items-center justify-center rounded-md mb-4 text-center text-black text-lg relative">
-                            ${booking.qr_code ? `<img id='qr-img' src="${booking.qr_code}" alt="QR CODE" style="width:200px;height:200px;object-fit:contain;border-radius:12px;background:#fff;" onerror="this.style.display='none'; document.getElementById('qr-fallback').style.display='flex';" />
-                            <div id='qr-fallback' style='display:none; position:absolute; inset:0;' class='w-full h-full items-center justify-center flex flex-col'><i class='fas fa-qrcode text-6xl text-gray-400'></i><div class='text-xs text-gray-700 mt-2'>QR CODE NOT FOUND</div></div>`
-                            : `<div class='flex flex-col items-center justify-center w-full h-full'><i class='fas fa-qrcode text-6xl text-gray-400'></i><div class='text-xs text-gray-700 mt-2'>No QR CODE</div></div>`}
+                    <div class="flex gap-6 mb-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-52 h-52 bg-[#a89c8a] flex items-center justify-center rounded-md text-center text-black text-lg relative">
+                                ${booking.qr_code ? `<img id='qr-img' src="${booking.qr_code}" alt="QR CODE" style="width:200px;height:200px;object-fit:contain;border-radius:12px;background:#fff;" onerror="this.style.display='none'; document.getElementById('qr-fallback').style.display='flex';" />
+                                <div id='qr-fallback' style='display:none; position:absolute; inset:0;' class='w-full h-full items-center justify-center flex flex-col'><i class='fas fa-qrcode text-6xl text-gray-400'></i><div class='text-xs text-gray-700 mt-2'>QR CODE NOT FOUND</div></div>`
+                                : `<div class='flex flex-col items-center justify-center w-full h-full'><i class='fas fa-qrcode text-6xl text-gray-400'></i><div class='text-xs text-gray-700 mt-2'>No QR CODE</div></div>`}
+                            </div>
                         </div>
-                    </div>
-                    <div class="space-y-3 text-sm">
-                        <p><strong>Passenger:</strong> <span class="detail-passenger">${booking.user_name}</span></p>
-                        <p><strong>Ticket Number:</strong> <span class="detail-id">${booking.id}</span></p>
-                        <p><strong>Date:</strong> <span class="detail-date">${new Date(booking.departure_date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span></p>
-                        <p><strong>Departure:</strong> <span class="detail-departure">${booking.departure_location}</span></p>
-                        <p><strong>Arrival:</strong> <span class="detail-arrival">${booking.arrival_location}</span></p>
-                        <p><strong>Boarding Time:</strong> <span class="detail-time">${new Date('1970-01-01T' + booking.departure_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span></p>
-                        <p><strong>Seat:</strong> <span class="detail-seat">${booking.seat || '-'}</span></p>
-                        <p><strong>Bus Number:</strong> <span class="detail-bus">${booking.bus_number || '-'}</span></p>
-                        <p><strong>Boarding Gate:</strong> <span class="detail-gate">${booking.boarding_gate || '-'}</span></p>
-                        <p><strong>Special Requests:</strong> <span class="detail-requests">${booking.special_requests || '-'}</span></p>
+                        <div class="flex-1 space-y-3 text-sm">
+                            <p><strong>Passenger:</strong> <span class="detail-passenger">${booking.user_name}</span></p>
+                            <p><strong>Ticket Number:</strong> <span class="detail-id">${booking.id}</span></p>
+                            <p><strong>Date:</strong> <span class="detail-date">${new Date(booking.departure_date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span></p>
+                            <p><strong>Departure:</strong> <span class="detail-departure">${booking.departure_location}</span></p>
+                            <p><strong>Arrival:</strong> <span class="detail-arrival">${booking.arrival_location}</span></p>
+                            <p><strong>Boarding Time:</strong> <span class="detail-time">${new Date('1970-01-01T' + booking.departure_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span></p>
+                            <p><strong>Seat:</strong> <span class="detail-seat">${booking.seat || '-'}</span></p>
+                            <p><strong>Bus Number:</strong> <span class="detail-bus">${booking.bus_number || '-'}</span></p>
+                            <p><strong>Boarding Gate:</strong> <span class="detail-gate">${booking.boarding_gate || '-'}</span></p>
+                            <p><strong>Special Requests:</strong> <span class="detail-requests">${booking.special_requests || '-'}</span></p>
+                        </div>
                     </div>
                     <div class="mt-6 flex justify-end gap-2">
                         ${currentUserRole === 'admin' ? `<button onclick=\"editTicket('${booking.id}')\" class=\"px-4 py-2 bg-blue-600 text-white rounded-lg text-sm\">Edit</button>` : ''}
